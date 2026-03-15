@@ -12,8 +12,8 @@ class HourTempDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenSizeConfig.screenHigh * .13,
-      width: ScreenSizeConfig.screenWidth * .1,
+      margin: EdgeInsets.only(top: 20, right: 5, left: 5),
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.white.withAlpha(100)),

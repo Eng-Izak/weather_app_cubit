@@ -52,22 +52,17 @@ class CityScreen extends StatelessWidget {
               ),
             ],
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: SizedBox(
-              height: ScreenSizeConfig.screenHigh * .13,
-              width: ScreenSizeConfig.screenWidth,
-              child: ListView.separated(
-                shrinkWrap: true,
-                itemBuilder: (context, index) => SizedBox(
-                  child: HourTempDetailsWidget(
-                    hour: hourTempCardsListTest[index].hour,
-                    tempDegree: hourTempCardsListTest[index].tempDegree,
-                  ),
-                ),
-                separatorBuilder: (context, index) => SizedBox(width: 2),
-                itemCount: hourTempCardsListTest.length,
+          SizedBox(
+            height: ScreenSizeConfig.screenHigh * .18,
+            width: ScreenSizeConfig.screenWidth,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => HourTempDetailsWidget(
+                hour: hourTempCardsListTest[index].hour,
+                tempDegree: hourTempCardsListTest[index].tempDegree,
               ),
+              separatorBuilder: (context, index) => SizedBox(width: 5),
+              itemCount: hourTempCardsListTest.length,
             ),
           ),
         ],
