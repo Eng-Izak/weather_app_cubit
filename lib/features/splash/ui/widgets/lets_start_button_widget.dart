@@ -16,7 +16,10 @@ class LetsStartButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         gradient: RadialGradient(
           radius: 3,
-          colors: [primaryColor1.withAlpha(200), primaryColor2],
+          colors: [
+            AppThemeData.primaryColor1.withAlpha(200),
+            AppThemeData.primaryColor2,
+          ],
         ),
       ),
       child: InkWell(

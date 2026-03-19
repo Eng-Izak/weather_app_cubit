@@ -7,30 +7,32 @@ class HomeScreenButtomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentGeometry.bottomCenter,
-      children: [
-        Container(
-          height: ScreenSizeConfig.screenHigh * .4,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: AlignmentGeometry.bottomCenter,
-              end: AlignmentGeometry.topCenter,
-              colors: [
-                Color(0xff001AFF).withAlpha((255 * .68).toInt()),
-                Color(0xffFFFFFF).withAlpha((255 * .68).toInt()),
-              ],
+    return SizedBox(
+      height: ScreenSizeConfig.screenHigh * .4,
+      width: ScreenSizeConfig.screenWidth,
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: AlignmentGeometry.bottomCenter,
+        children: [
+          Positioned(
+            bottom: -ScreenSizeConfig.screenWidth * 1.3,
+            child: Container(
+              height: ScreenSizeConfig.screenWidth * 2,
+              width: ScreenSizeConfig.screenWidth * 2,
+              decoration: BoxDecoration(
+                color: Color(0xff001AFF).withAlpha((255 * .3).toInt()),
+                shape: BoxShape.circle,
+                // borderRadius: BorderRadius.vertical(top: Radius.circular(500)),
+              ),
             ),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(190)),
           ),
-        ),
-        SizedBox(
-          width: ScreenSizeConfig.screenWidth * .7,
-          height: ScreenSizeConfig.screenHigh * .4,
-          child: HomeSplashLogoWidget(),
-        ),
-      ],
+          SizedBox(
+            width: ScreenSizeConfig.screenWidth * .7,
+            height: ScreenSizeConfig.screenHigh * .4,
+            child: HomeSplashLogoWidget(),
+          ),
+        ],
+      ),
     );
   }
 }

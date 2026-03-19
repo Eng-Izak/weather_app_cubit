@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app_cubit/core/constants/screen_size_config.dart';
 import 'package:weather_app_cubit/features/city_screen/ui/widgets/city_main_details_widget.dart';
 import 'package:weather_app_cubit/features/city_screen/ui/widgets/hour_temp_details_widget.dart';
+import 'package:weather_app_cubit/features/days_screen/ui/days_screen.dart';
 
 class CityScreen extends StatelessWidget {
   const CityScreen({
@@ -42,12 +43,20 @@ class CityScreen extends StatelessWidget {
                   decoration: TextDecoration.none,
                 ),
               ),
-              Text(
-                "7 Days",
-                style: TextStyle(
-                  color: Colors.white.withAlpha(100),
-                  fontSize: ScreenSizeConfig.screenHigh * .022,
-                  decoration: TextDecoration.none,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DaysScreen()),
+                  );
+                },
+                child: Text(
+                  "7 Days",
+                  style: TextStyle(
+                    color: Colors.white.withAlpha(100),
+                    fontSize: ScreenSizeConfig.screenHigh * .022,
+                    decoration: TextDecoration.none,
+                  ),
                 ),
               ),
             ],

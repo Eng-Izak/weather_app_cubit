@@ -14,7 +14,10 @@ class HomeScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: AlignmentGeometry.topRight,
             end: AlignmentGeometry.bottomLeft,
-            colors: [primaryColor1.withAlpha(200), primaryColor2],
+            colors: [
+              AppThemeData.primaryColor1.withAlpha(200),
+              AppThemeData.primaryColor2,
+            ],
           ),
         ),
         child: HomeScreenDetailsWidget(),
